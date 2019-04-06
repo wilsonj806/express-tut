@@ -3,6 +3,12 @@
 ## References
 
 - [Express crash course](https://youtu.be/L72fhGm1tfE)
+- [Express API guide](https://expressjs.com/en/4x/api.html)
+
+## Additional Notes
+
+- [Express Core Concepts](./express-concepts.md)
+- [Routes explained](./route-notes.md)
 
 ## What is Express
 
