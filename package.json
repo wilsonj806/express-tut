@@ -1,0 +1,22 @@
+{
+  "name": "express-tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index",
+    "dev": "nodemon server/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.1",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
