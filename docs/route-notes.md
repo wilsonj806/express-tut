@@ -2,7 +2,8 @@
 
 ## References
 
-- [Medium article](https://medium.com/@wilbo/server-side-vs-client-side-routing-71d710e9227f)
+- [Medium article on server-side vs client-side routing](https://medium.com/@wilbo/server-side-vs-client-side-routing-71d710e9227f)
+- [Medium article on isomorphic js](https://hackernoon.com/get-an-isomorphic-web-app-up-and-running-in-5-minutes-72da028c15dd)
 
 ## General Description
 

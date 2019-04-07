@@ -1,20 +1,33 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const path = require('path');
 
 const app = express();
 
 // setting up the port so it automatically checks if there's one already
-const PORT = process.ENV || 5000;
+const PORT = process.ENV || 4000;
 
 const logger = require('./middleware/logger');
+const members = require('./Members');
 
-// init logger middleware
+// NOTE Init logger middleware
 // app.use(logger);
 
-//  this is a utility/ middleware included with Express.js
+// NOTE express-handlebars middleware
+/* this is middleware for rendering a template, which uses app.engine() for it*/
+app.engine('handlebars', exphbs({defaultLayout:'main'}));
+app.set('view engine', 'handlebars');
+
+// NOTE this is a utility/ middleware included with Express.js
 app.use(express.json());
 // below lets us use urlencoded data
 app.use(express.urlencoded({ extended: false }));
+
+// Homepage Route
+app.get('/', (req, res) => res.render('index', {
+  title: 'My hilarious dog',
+  members
+}));
 
 /* Note that if we run it in the browser without app.get(), it's going to spit an error
 This is because the server isn't sending anything back to the browser */

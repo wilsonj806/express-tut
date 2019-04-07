@@ -50,6 +50,7 @@ router.post('/', (req, res) => {
     normally we'd probably save this to the Members.js file or send a command to the database */
 
   res.json(members);
+  // res.redirect('/');
   // if we just call req.body it spits an error out, so we'll need a body parser
   // res.send(req.body);
 })
