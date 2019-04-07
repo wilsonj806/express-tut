@@ -1,26 +1,20 @@
 const express = require('express');
 const path = require('path');
-const Members = require('./Members');
 
 const app = express();
 
-const logger = require('./middleware/logger');
-
-// init logger
-app.use(logger);
-
-/* Here we're creating a route for requests
-  tl;dr routes let the user access different parts of a web app, from other pages in the app to api access
-*/
-
-// GET all members
-app.get('/api/members', (req, res) => {
-  // Note that we don't need to use JSON.stringify() here
-  res.json(Members);
-});
-
 // setting up the port so it automatically checks if there's one already
 const PORT = process.ENV || 5000;
+
+const logger = require('./middleware/logger');
+
+// init logger middleware
+// app.use(logger);
+
+//  this is a utility/ middleware included with Express.js
+app.use(express.json());
+// below lets us use urlencoded data
+app.use(express.urlencoded({ extended: false }));
 
 /* Note that if we run it in the browser without app.get(), it's going to spit an error
 This is because the server isn't sending anything back to the browser */
@@ -31,5 +25,7 @@ This is because the server isn't sending anything back to the browser */
   If you recall the node crash course, there was way more code to get the same result
  */
 app.use(express.static(path.join(__dirname, '../', 'public')));
+
+app.use('/api/members', require('./routes/api/members'))
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
