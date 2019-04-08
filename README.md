@@ -4,9 +4,10 @@
 
 A quick Express.js tutorial with notes and etc.
 
-Notes based off of Traversy Media's [Express crash course](https://youtu.be/L72fhGm1tfE)
+Notes based off of Traversy Media's [Express crash course](https://youtu.be/L72fhGm1tfE) and the [repository](https://github.com/bradtraversy/express_crash_course) for said crash course.
 
 Additional notes can be found in the [docs section](./docs/express-notes.md)
+
 - Said docs include notes on:
   - basic Express.js concepts
   - general Express notes
